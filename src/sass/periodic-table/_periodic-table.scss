@@ -1,0 +1,26 @@
+.periodic-table {
+  width: 1480px;
+  box-shadow: #e9e9e9 5px 5px 5px;
+  margin: auto 10px;
+  padding: 30px;
+
+  &.table-light {
+    background-color: $table-background--light;
+
+    // *:has(+ .table-header) {
+    // &+.table-header {
+    // color: $text-color--light;
+    // color: black;
+    // }
+  }
+
+  &.table-dark {
+    background-color: $table-background--dark;
+
+    // &:has(+ .table-header) {
+    // &+.table-header {
+    // color: $text-color--dark;
+    //   color: white;
+    // }
+  }
+}

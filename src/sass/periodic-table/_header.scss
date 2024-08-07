@@ -1,0 +1,22 @@
+.table-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+
+  &__icon {
+    font-size: 48px;
+  }
+
+  &__title {
+    font-size: 48px;
+  }
+
+  &.light {
+    color: $text-color--light;
+  }
+
+  &.dark {
+    color: $text-color--dark;
+  }
+}

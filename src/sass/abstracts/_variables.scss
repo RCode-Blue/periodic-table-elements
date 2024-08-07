@@ -1,0 +1,57 @@
+// Typography
+$font-family-main: "Poppins", sans-serif;
+
+// COLORS
+// DARK MODE
+$body-background--dark: #2a3341;
+$table-background--dark: #1e252f;
+$chip-text-color--dark: #c8cfdc;
+$text-color--dark: #d5dbe6;
+
+// Physical states
+$chip-gradient--solid-1--dark: #e8e8e8;
+$chip-gradient--solid-2--dark: #3b3b3b;
+
+$chip-gradient--liquid-1--dark: #f7374b;
+$chip-gradient--liquid-2--dark: #5e0303;
+
+$chip-gradient--gas-1--dark: #ffa20b;
+$chip-gradient--gas-2--dark: #783f06;
+
+$chip-gradient--unknown-1--dark: #34ff7b;
+$chip-gradient--unknown-2--dark: #125e2d;
+
+
+
+// spdf blocks
+$s-block---btn-bg--dark: #58111a;
+$f-block---btn-bg--dark: #004225;
+$d-block---btn-bg--dark: #002448;
+$p-block---btn-bg--dark: #36301f;
+
+
+// LIGHT MODE ------------------------------------
+// Table
+$body-background--light: #f0efef;
+$table-background--light: #fcfcec;
+$chip-text-color--light: #07090c;
+$text-color--light: #07090C;
+
+// Physical states
+$chip-gradient--solid-1--light: #1e1e1e;
+$chip-gradient--solid-2--light: #b6b6b6;
+
+$chip-gradient--liquid-1--light: #920303;
+$chip-gradient--liquid-2--light: #fbbab1;
+
+$chip-gradient--gas-1--light: #ff860e;
+$chip-gradient--gas-2--light: #dfdf04;
+
+$chip-gradient--unknown-1--light: #176d35;
+$chip-gradient--unknown-2--light: #a8e3bd;
+
+// spdf blocks
+$s-block---btn-bg--light: #fac2c2;
+$f-block---btn-bg--light: #d8eaa0;
+$d-block---btn-bg--light: #c2dbf6;
+$p-block---btn-bg--light: #f7e893;
