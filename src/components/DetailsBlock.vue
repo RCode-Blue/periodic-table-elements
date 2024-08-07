@@ -1,7 +1,9 @@
 <template>
   <div class="block details">
-    <Chip :mode="props.mode" :element="props.element" />
-    <div :class="['sidebar', props.mode]">
+    <!-- <Chip :mode="props.mode" :element="props.element" /> -->
+    <Chip :mode="mode" :element="props.element" />
+    <!-- <div :class="['sidebar', props.mode]"> -->
+      <div :class="['sidebar', mode]">
       <ul class="sidebar-properties block-text">
         <li class="item">
           <span class="property">Atomic number: </span>
@@ -42,22 +44,22 @@
       </ul>
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
   import Chip from "@/components/Chip.vue"
-  import { defineProps, watch, ref }  from 'vue';
+  import { computed, defineProps, watch, ref }  from 'vue';
+  import { useModeStore } from "@/stores/modeStore";
 
   const props = defineProps({
     element: {
       type: Object,
       required: true
     },
-    mode: {
-      type: String,
-      required: true
-    }
+    // mode: {
+    //   type: String,
+    //   required: true
+    // }
   })
 
   const atomicNo = ref(props.element[0]);
@@ -88,6 +90,7 @@
   }
   watch(() => props.element, updateState, { immediate: true })
 
-
+  const modeStore = useModeStore();
+  const mode = computed(() => modeStore.mode);
 
 </script>

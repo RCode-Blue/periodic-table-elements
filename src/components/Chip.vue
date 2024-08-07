@@ -12,13 +12,14 @@
 </template>
 
 <script setup lang="ts">
-  import { defineProps, inject, watch, ref } from 'vue';
+  import { computed, defineProps, inject, watch, ref } from 'vue';
+  import { useModeStore } from '@/stores/modeStore';
 
   const props = defineProps({
-    mode: {
-      type: String,
-      required: true
-    },
+    // mode: {
+    //   type: String,
+    //   required: true
+    // },
     element: {
       type: Object, 
       required: true
@@ -57,7 +58,7 @@
   watch(()=> props.element, updateState, {immediate:true})
 
   const getChipClasses = () => {
-    let chipClasses =  ["chip", `chip-${atomicNo.value}`, `chip-${props.mode}`, `chip-state--${physicalState}` ];
+    let chipClasses =  ["chip", `chip-${atomicNo.value}`, `chip-${mode.value}`, `chip-state--${physicalState}` ];
 
     // s-block
     const sBlockNos = [1, 2, 3, 4, 11, 12, 19, 20, 37, 38, 55, 56, 87, 88];
@@ -102,5 +103,8 @@
   const selectChip = ()=>{
     updateSelectedElement(atomicNo.value)
   }
+
+  const modeStore = useModeStore();
+  const mode= computed(()=>modeStore.mode)
 
 </script>

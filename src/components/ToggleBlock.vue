@@ -1,19 +1,37 @@
 <template>
   <div class="block toggle-block">
-    <div :class="['toggle-block__mode', state.mode]">
+    <div :class="['toggle-block__mode', mode]">
       <div class="block-header">Mode: </div>
       <label class="light-dark-switch">
         <input type="checkbox" class="check" @change="toggleMode">
         <span class="slider"></span>
       </label>
-      <div>{{ state.mode }}</div>
+      <div>{{ mode }}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { defineProps, reactive, inject } from 'vue';
+  import { computed, defineProps, reactive, inject } from 'vue';
+  import { useModeStore } from '@/stores/modeStore';
 
+  // const modeStore = updateModeStore();
+  const modeStore = useModeStore();
+  const mode = computed(()=>modeStore.mode);
+
+  const toggleMode = () => {
+    modeStore.toggleMode();
+    const docBody = document.body;
+    if(mode.value === 'light') {
+      docBody.classList.remove('dark');
+      docBody.classList.add('light')
+    } else {
+      docBody.classList.remove('light');
+      docBody.classList.add('dark')
+    }
+  }
+
+  /*
   type Mode = 'light' | 'dark';
 
   const props = defineProps({
@@ -42,5 +60,5 @@
       document.body.classList.add('dark')
     }
   }
-
+*/
 </script>

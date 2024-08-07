@@ -17,17 +17,18 @@
   </div>
 </template>
 <script setup lang="ts">
-import { defineProps, reactive, inject, watch, ref } from 'vue';
+import { computed, defineProps, reactive, inject, watch, ref } from 'vue';
+import { useModeStore } from '@/stores/modeStore';
 
 type Mode = 'light' | 'dark';
 
-const props = defineProps({
-  mode: {
-    type: String,
-    default: "light",
-    required: true
-  }
-})
+// const props = defineProps({
+//   mode: {
+//     type: String,
+//     default: "light",
+//     required: true
+//   }
+// })
 
 const makeUpperWord = (word: String) => {
   const upperWord = word.charAt(0).toUpperCase() + word.slice(1);
@@ -36,6 +37,7 @@ const makeUpperWord = (word: String) => {
 
 const physicalStates = ["solid", "liquid", "gas", "unknown"];
 
-
+const modeStore = useModeStore();
+const node = computed(() => modeStore.mode)
 
 </script>
