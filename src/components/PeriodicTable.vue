@@ -2,11 +2,14 @@
   <section 
     :class="tableClasses()">
     <Chip v-for="element in state.elements" 
-    :key="element.Cell[0]"
-    :mode="mode"
-    :element="element.Cell" />
+      :key="element.Cell[0]"
+      :mode="mode"
+      :element="element.Cell" />
     <ToggleBlock :mode="mode"/>
-    <DetailsBlock v-if="state.showDetails && state.selectedElement" :element="state.elements[state.selectedElement-1].Cell" :mode="mode"/>
+    <DetailsBlock 
+      v-if="state.showDetails && state.selectedElement" 
+      :element="state.elements[state.selectedElement-1].Cell" 
+      :mode="mode"/>
     <LegendBlock :mode="mode"/>
     <div class="sp-spacer"></div>
   </section>
@@ -18,6 +21,7 @@
   import Chip from "@/components/Chip.vue";
   import DetailsBlock from "@/components/DetailsBlock.vue";
   import LegendBlock from "@/components/LegendBlock.vue";
+  import elementsData from "@/data/elements.json";
 
   import { useModeStore } from "@/stores/modeStore";
 
@@ -42,14 +46,8 @@
     return classes;
   };
 
-  const buildPeriodicTable = async() => {
-    const res = await fetch("../src/data/elements.json");
-    const data = await res.json();
-    state.elements = data.Table.Row;
-  };
-
-  onMounted(async () => {
-    buildPeriodicTable();
+  onMounted( () => {
+    state.elements = elementsData.Table.Row;
   })
 
   const updateSelectedElement = (newSelectedElement: any) => {

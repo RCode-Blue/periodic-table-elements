@@ -1,13 +1,13 @@
 <template>
   <div :class="getChipClasses()">
     <button class="chip-btn" @click="selectChip">
-        <div class="chip-content__line-1">
-          <div class="left">{{atomicNo}}</div>
-          <div class="right">{{atomicMass}}</div>
-        </div>
-        <div class="chip-content__line-2 center">{{symbol}}</div>
-        <div class="chip-content__line-3 center">{{name}}</div>
-      </button>
+      <div class="chip-content__line-1">
+        <div class="left">{{atomicNo}}</div>
+        <div class="right">{{atomicMass}}</div>
+      </div>
+      <div class="chip-content__line-2 center">{{symbol}}</div>
+      <div class="chip-content__line-3 center">{{name}}</div>
+    </button>
   </div>
 </template>
 
