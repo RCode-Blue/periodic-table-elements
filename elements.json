@@ -1,5 +1,27 @@
-
-    [
+{
+  "Table": {
+    "Columns": {
+      "Column": [
+        "AtomicNumber",
+        "Symbol",
+        "Name",
+        "AtomicMass",
+        "CPKHexColor",
+        "ElectronConfiguration",
+        "Electronegativity",
+        "AtomicRadius",
+        "IonizationEnergy",
+        "ElectronAffinity",
+        "OxidationStates",
+        "StandardState",
+        "MeltingPoint",
+        "BoilingPoint",
+        "Density",
+        "GroupBlock",
+        "YearDiscovered"
+      ]
+    },
+    "Row": [
       {
         "Cell": [
           "1",
@@ -2479,4 +2501,5 @@
         ]
       }
     ]
-
+  }
+}

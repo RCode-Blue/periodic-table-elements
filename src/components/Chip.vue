@@ -16,10 +16,6 @@
   import { useModeStore } from '@/stores/modeStore';
 
   const props = defineProps({
-    // mode: {
-    //   type: String,
-    //   required: true
-    // },
     element: {
       type: Object, 
       required: true
@@ -36,6 +32,7 @@
   const atomicMass = ref(parseFloat(props.element[3]).toFixed(2).toString());
   const meltingPoint = ref(props.element[12]); // Kelvins
   const boilingPoint = ref(props.element[13]); // Kelvins
+  const groupBlock = ref(props.element[15].toLowerCase());
 
   const updateState = () => {
     atomicNo.value = parseInt(props.element[0]);
@@ -58,7 +55,7 @@
   watch(()=> props.element, updateState, {immediate:true})
 
   const getChipClasses = () => {
-    let chipClasses =  ["chip", `chip-${atomicNo.value}`, `chip-${mode.value}`, `chip-state--${physicalState}` ];
+    let chipClasses =  ["chip", `chip-${atomicNo.value}`, `chip-${mode.value}`, `chip-state--${physicalState}`, `gb-${groupBlock.value}` ];
 
     // s-block
     const sBlockNos = [1, 2, 3, 4, 11, 12, 19, 20, 37, 38, 55, 56, 87, 88];

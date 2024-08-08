@@ -1,11 +1,17 @@
 .block {
 
   .block-header {
-    font-size: 14px;
+    font-size: torem(14);
   }
 
   .block-text {
-    font-size: 12px;
+    font-size: torem(12);
+  }
+
+  .block-footnote {
+    margin-top: torem(5);
+    font-size: torem(9);
+    font-style: italic;
   }
 
   .block-list {}
@@ -13,19 +19,17 @@
   // Toggle
   &.toggle-block {
     font-family: $font-family-main;
-    font-size: 14px;
-    border-radius: 4px;
-    padding: 10px;
+    font-size: torem(14);
+    border-radius: torem(4);
+    padding: torem(10);
     margin: auto;
-    // margin-top: auto;
-    // margin-bottom: auto;
   }
 
   .toggle-block {
     &__mode {
       display: flex;
       align-items: center;
-      column-gap: 10px;
+      column-gap: torem(10);
 
       &.light {
         color: $text-color--light;
@@ -38,8 +42,8 @@
       .light-dark-switch {
         position: relative;
         display: inline-block;
-        width: 30px;
-        height: 18px;
+        width: torem(30);
+        height: torem(18);
 
 
         input[type=checkbox] {
@@ -59,7 +63,7 @@
           border: 1px solid #5c7890;
           transition: 0.4s;
           -webkit-transition: 0.4s;
-          border-radius: 4px;
+          border-radius: torem(4);
           ;
         }
 
@@ -67,14 +71,14 @@
         .slider:before {
           position: absolute;
           content: "";
-          height: 10px;
-          width: 10px;
-          left: 4px;
-          bottom: 3px;
+          height: torem(10);
+          width: torem(10);
+          left: torem(4);
+          bottom: torem(3);
           background-color: white;
           transition: .4s;
           -webkit-transition: .4s;
-          border-radius: 3px;
+          border-radius: torem(3);
         }
 
         input:checked+.slider {
@@ -86,7 +90,7 @@
         }
 
         input:checked+.slider:before {
-          transform: translateX(11px);
+          transform: translateX(torem(11));
         }
 
       }
@@ -98,43 +102,44 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    column-gap: 20px;
+    column-gap: torem(20);
     font-family: $font-family-main;
 
     .chip {
-      width: 150px;
-      height: 150px;
-      padding: 10px;
-      border-radius: 12px;
+      width: torem(160);
+      height: torem(160);
+      padding: torem(10);
+      border-radius: torem(12);
+      margin: 0;
 
       .chip-btn {
-        border-radius: 12px;
+        border-radius: torem(12);
 
         .chip-content {
           &__line-1 {
             .left {
-              font-size: 18px;
+              font-size: torem(22);
             }
 
             .right {
-              font-size: 14px;
+              font-size: torem(18);
             }
           }
 
           &__line-2.center {
-            font-size: 62px;
+            font-size: torem(64);
             font-weight: bold;
           }
 
           &__line-3 {
-            font-size: 18px;
+            font-size: torem(22);
           }
         }
       }
     }
 
     .sidebar {
-      font-size: 10px;
+      font-size: torem(10);
 
       &.light {
         color: $text-color--light;
@@ -149,41 +154,53 @@
 
         .item {
           display: flex;
-          column-gap: 5px;
+          column-gap: torem(5);
           line-height: 1.5;
 
           .property {
             display: inline-block;
-            width: 120px;
+            width: torem(120);
             word-wrap: normal;
           }
 
-          .value {}
+          .value {
+            width: torem(100);
+          }
         }
       }
     }
   }
-
-
 }
 
-
-
-
-
 .legend-block {
-  padding: 20px;
+  width: torem(210);
+  padding: torem(12);
   display: flex;
   flex-direction: column;
+  justify-content: end;
 
+  &--light {
+    color: $text-color--light;
+  }
+
+  &--dark {
+    color: $text-color--dark;
+  }
 }
 
 .legend {
   &__list-item {
     display: flex;
+    align-items: center;
+    column-gap: torem(10);
+    margin: torem(3) auto;
   }
 
-  &__title {}
+  &__chip {
+    .chip-btn {
+      border-radius: torem(2);
+    }
+  }
 
   &__description {
     list-style-type: none;
@@ -191,13 +208,10 @@
     padding: 0;
 
     .chip {
-      height: 20px;
-      width: 20px;
-    }
-
-    .chip-btn {
-      // height: 15px;
-      // width: 15px;
+      height: torem(18);
+      width: torem(18);
     }
   }
+
+
 }
